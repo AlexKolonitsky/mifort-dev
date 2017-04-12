@@ -1,4 +1,7 @@
-# mifort-hrm
+# Mifort Dev Zone
 
-## !распределение!
-see documentation [here](распределение/README.md)
+## Articles
+...
+
+## Presentations
+...
