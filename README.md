@@ -5,4 +5,7 @@
 * [DynamoDB](./Article.DynamoDb.md)
 
 ## Presentations
-* [Handlebars Igor](https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms)
+* [Handlebars - Igor](https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms)
+* [Closures - Sergey](https://drive.google.com/open?id=0B1qS6sGXuV7wTUtlSmZTNVZia0E)
+* [Gulp - Sergey](https://drive.google.com/open?id=0B1qS6sGXuV7wT2FnUjJ2RFdvTlFrRHk0RWFUVmxycGlCUUhJ)
+* [ngModelOptions - Sergey](https://drive.google.com/open?id=0B1qS6sGXuV7wSlZtek15elMxU19YTDZaVDg4RUFPX2ltVmI4)
