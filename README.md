@@ -5,4 +5,4 @@
 * [DynamoDB](./Article.DynamoDb.md)
 
 ## Presentations
-* (Handlebars Igor)[https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms]
+* [Handlebars Igor]([https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms)
