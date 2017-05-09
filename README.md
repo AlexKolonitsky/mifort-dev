@@ -2,7 +2,7 @@
 
 ## Articles
 * [Git](./tools/git.md) basics and workflow
-* [DynamoDB](./Article.DynamoDb.md)
+* [DynamoDB](./mifort-dev/Article. DynamoDb.md)
 * [Handlebars](./Handlebars)
 
 ## Presentations
