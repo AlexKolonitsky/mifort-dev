@@ -3,7 +3,7 @@
 ## Articles
 * [Git](./tools/git.md) basics and workflow
 * [DynamoDB](./Article._DynamoDb.md)
-* [Handlebars](./Handlebars)
+* [Handlebars](./Handlebars.md)
 
 ## Presentations
 * [Handlebars - Igor](https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms)
