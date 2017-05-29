@@ -34,7 +34,7 @@ Eng Movie Night
 Public Code Review - Андрей
 
 * СР 12:00 Training
-Alex - "Структурные паттерны: ..." - 60 min
+Alex - "Структурные паттерны: Iterator, Observer, Strategy, Template Method" - 60 min
 
 * ЧТ 18:00
 JS Quiz - Andrew
