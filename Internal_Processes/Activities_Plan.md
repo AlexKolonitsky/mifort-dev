@@ -14,10 +14,10 @@ Alex - "Структурные паттерны: Composite, Decorator, Flyweight
 Public Code Review - Александр
 
 * СР 12:00 Training
-Алексей - "???" - 60 min
+Алекс - "Structural Patterns: Iterator, Observer, Strategy, Template Method" - 60 min
 
 * ЧТ 18:00
-Прыгаем с моста (если Саша договорится)
+Film "Simple made easy" - Alex
 
 ## 12.06 - 16.06
 * ВТ 18:00 
