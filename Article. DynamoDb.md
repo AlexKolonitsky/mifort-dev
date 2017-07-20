@@ -1,150 +1,152 @@
-# DynamoDB
+# DynamoDb
 
-Если у вас возникла необходимость в NoSQL базе данных с высокой производительностью и эффективной масштабируемостью, и вы не хотите изобретать велосипед для управления таким элементами, как
+If you have necessity in NoSQL database with fast performance and effective scalability, and you don't want to reinvent the wheel for management of such elements as 
 
-* ввод оборудования в эксплуатацию
-* настройка и конфигурация оборудования
-* репликация
-* обновление ПО
-* масштабирование кластеров
+* commissioning 
+* setting and configuration of equipment
+* replication
+* software patching
+* cluster scaling
 
-то Amazon DynamoDb будет хорошим решением.
+Amazon DynamoDb will be a good decision.
 
-DynamoDB - хранилище данных типа "ключ-значение" (операции над данными происходят с помощью ключа) и "хранилище документов" (выполнение запросов в формате документов, например JSON, XML и HTML).
+DynamoDB is a key-value (work on data occurs with a help of key) and document data structures (querying and updating items in a document format such as JSON, XML, and HTML).
 
->DynamoDB, как представитель нерелляционной базы данных, не поддерживает  сложные запросы, основанные на принципе join, или комплексные транзакции.
+>DynamoDB as the representative of non-relational database doesn't support composite queries based on joins or complex transactions.
 
-Отличительная особенность данной базы данных - принцип оплаты, основанный на производительности (throughput), а не на объеме хранимой информации. Однако для эффективных запросов (чтения, записи) стоит оперировать объектами размером от 1 байта до 400 КБ. В случае "б*о*льших" объектов (например, неструктурированные BLOB-объекты)  можно использовать следующую связку сервисов: Amazon S3 - для хранения массивов информации, а DynamoDB - указатели на них.
+Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However you should interact with the size of objects between 1 byte and 400KB for effective queries (wtiting, reading). In case of larger objects (for example not structured BLOB-objects) you can use following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
 
-## Настраиваемые сервисы DynamoDB
+## Customizable Services of DynamoDB
 
-В отличие от многих других баз данных, добавление каких-либо улучшений для работы с базой можно реализовать всего в несколько кликов. Вот некоторые примеры. 
+In contrast to many others databases, the addition of any improvements for working with database is possible to organize in a few clicks. Here are some examples.
 
-### FGAC - Функция полного контроля доступа
-С ее помощью можно регулировать доступом как на уровне самой таблицы, так и ее отдельных атрибутов. Работает через токен безопасности. 
-Не производится дополнительная оплата
+### FGAC - Fine-Grained Access Control
+You can use FGAC to restrict access to your data based on top-level attributes in your document. It works through the secret access token.
+There is no additional payment.
 
-### Непротиворечивость данных
-Определяется временем, за которое результат успешно выполненной записи или обновления элемента данных отобразится при последующей операции чтения этого же элемента. 
-* потенциально непротиворечивые данные - максимизирует пропускную способность чтения 
+### Consistency of Data
+It determines by the time in which the result of writing the data is successfully done in a subsequent reading of the element.
+* eventual consistency reads option maximizes read throughput
 
-  >Как правило, данные становятся непротиворечивыми в течение одной секунды.
+  >As a rule, data is become consistent in a second.
 
-*  строго непротиворечивые данные - возвращает результат, в котором отражены все записи, получившие отклик об успешном выполнении перед совершением операции чтения
+*  strongly consistent reads return a result that reflects all writes that received a successful response prior to the read.
   
-### Межрегиональная репликация 
-Позволяет создавать и поддерживать реплики в одном или нескольких регионах AWS. Может использоваться для
-1. Эффективного аварийного восстановления
-2. Более быстрого чтения для пользователей в регионах отличных от того, где находится основной
-3. Распределения нагрузок
-4. Простой межрегиональной миграции и без остановки работы
+### Cross-region Replication
 
-  >За использование межрегиональной репликации дополнительная плата не взимается, оплата происходит только за ресурсы, используемые в процессе работы, по стандартным тарифам.  
+Cross-region replication allows you to maintain identical copies (called replicas) of a DynamoDB table (called master table) in one or more AWS regions. Can be used for
+1. Efficient disaster recovery
+2. Faster reads for users in regions distinct from the main is situated
+3. Easier traffic management
+4. Easy regional migration with live data migration
+
+  >While there is no additional charge for the cross-region replication library, you pay the usual prices for the following resources used by the process.  
 
 ### DynamoDB Streams
 
-DynamoDB Streams - упорядоченная по времени последовательность изменений элементов в течение последних 24 часов. По истечении это времени данные удаляются. 
+DynamoDB Streams provides a time-ordered sequence of item-level changes made to data in a table in the last 24 hours. At the end of this time data is deleted.
 
-Включается отдельно для каждой таблицы. 
+You should make it enable for each table. 
 
-Изменения отображаются в порядке их применения относительно одних и тех же элементов. 
+Changes made to any individual item will appear in the correct order.
 
-**Пример**
+**Example**
 
 ```
-Был следующий порядок обновления:
-	1. У игрока 1 - 100 очков
-	2. У игрока 2 - 50 очков
-	3. У игрока 1 - 70 очков
-Третье обновление будет обязательно после первого. Но нет гарантий, что второе обновление будет строго между ними.
+You have following order of updating
+	1. First player has 100 points
+	2. Second player - 50 points
+	3. First player - 70 points
+The third updating must be after the first, but there is no guarantees that the second will be between the 1st and 3rd. 
 ```
-Считывать из потока можно со скоростью до двух раз превышающей выделенной пропускной способности записи в таблицу. 
+You can read updates from your stream in DynamoDB Streams at up to twice the rate of the provisioned write capacity of your DynamoDB table. 
 
-В консоле можно настроить данные, которые будет содержать stream: данные, как о предшествующем, так и о новом значении элемента,  а также о типе изменения (INSERT, REMOVE или MODIFY) и о первичном ключе измененного элемента.
+You can manage data in console in such a way: the name of the key, the item before (old item) and after (new item) and the type of updating (INSERT, REMOVE или MODIFY).
 
-### Триггеры
-Триггеры - это функция, которая позволяет выполнять пользовательские действия на основе обновлений элементов таблицы DynamoDB. Это работает следующим образом: 
-* пользовательский код триггера DynamoDB хранится в функции AWS Lambda в виде кода
-* связывается функция AWS Lambda с потоком DynamoDB Streams (для конкретной таблицы)
-* AWS Lambda считывает обновления соответствующего потока и приводит код в действие. 
+### Triggers
+DynamoDB Triggers is a feature which allows you to execute custom actions based on item-level updates on a DynamoDB table. You can specify the custom action in following:
+* The custom logic (code of trigger) is stored in AWS function as code
+* Associate an AWS Lambda function to the stream (via DynamoDB Streams) on a DynamoDB table
+* AWS Lambda reads the updates from the associated stream and executes the code in the function.
 
->Оплата - за фактическое время вычисления
+>Payment is for the time execution
 
-### Время жизни TTL
-Время жизни TTL - это механизм, с помощью которого можно настраивать удаление данных при достижении параметра "отметки времени" (атрибут формата POSIX - хранение времени в секундах от 1 января 1970г).
+### Time-to-Live (TTL)
+Time-to-Live is a mechanism that lets you set a specific timestamp to delete expired items from your tables, when timestamp is reached.  This attribute is in POSIX format - storage time in seconds from January 1, 1970г.
 
-Например, используется для удаления журналов событий, история использования, данных о сессиях и др. 
+For example, it is used for deleting event logs, usage history, session data, etc. 
 
-Этот механизм работает по принципу наименьших затрат и старается не отвлекать ресурсы от других более важных задач. 
+Such mechanism works on the principle of least cost and tries not to divert resources from other more important tasks.
 
->Удаление происходит в течение 2 дней в фоновом режиме
+>Deletion occurs in 2 days in background
  
-### Пропускная способность
+### Throughput Capacity
 
-- пропускная способность чтения
-- пропускная способность записи
+- Read Capacity
+- Write Capacity 
 
-##### Таблица расчетов пропускной способности
-| Единица ресурса | Количество операций в секунду | Объем элементов|
+##### Table of the calculation of throughput capacity
+| read/write capacity unit | Number of item per second | Units of Capacity|
 | :---         |     :---:      |          ---: |
-| Записи  | 1     | Не более 1КВ    |
-| Чтения (строго непротиворечивого)    | 1      | Не более 4КВ |
-| Чтения  (потенциально непротиворечивого)  | 2       | Не более 4КВ     |
+| Write  | 1     | less or equal 1КВ    |
+| Strongly Consistent Read  | 1      | less or equal 4КВ |
+| Eventual Consistency Reads  | 2       | less or equal 4КВ     |
 
-##### Формула
+##### Formula
 ```
-Требуемое число единиц ресурса для выделения = число операций в секунду * Math.ceil(предполагаемый считываемый блок / объем элемента (табличный))
+Units of Capacity required for assignment = Number of item per second * Math.ceil( block you need / table capacity unit)
 ```
-##### Пример
+##### Example
 
 ```
-Так, если записываем блоки размерности меньше 1КВ и нужно выполнять 100 операций в секунду, то необходимое число ресурсов записи для выделения - 100. 
-В случае если считываем 1.5 - уже 200 единиц ресурса надо выделить для обеспечения 100 операций в секунду. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
+So, if we write blocks of the size less then 1КВ and need execute 100 operation per second, that needless amount of resources for writing is 100. 
+In case if we read 1.5Kb - we need 200 units of resources for provision 100 operation per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 ```
 
-Наименьшая пропускная способность - 1 единица ресурса записи и 1 единица ресурса чтения. Увеличивать можно неограниченное количество за сутки, уменьшать - 4 раза.
+The least throughput capacity - 1 write unit and 1 read unit. You can increase your provisioned throughput as often as you want, decrease - 4 times.
 
->Требуемое количество единиц ресурса чтения определяется числом считываемых за секунду элементов, а не числом вызовов API. Например, считываем 500 элементов, тогда не важно сделано ли 500 отдельных вызовов по одному элементу, или 50 вызовов, каждый из которых вернет по 10 элементов.
+>Note that the required number of units of Read Capacity is determined by the number of items being read per second, not the number of API calls. For example, if you need to read 500 items per second from your table, and if your items are 4KB or less, then you need 500 units of Read Capacity. It doesn’t matter if you do 500 individual GetItem calls or 50 BatchGetItem calls that each returns 10 items.
 
-### Глобальные и локальные индексы
+### Global and Local Indexes
 
-Поскольку запросы формируются только с использованием первичного ключа (за исключением запроса scan), то для эффективных операций над таблицами стоит обратить внимание на такой гибкий механизм как индексы. Они позволяет делать запросы по атрибутам, которые не являются ключевыми.
+Because the requests are made only with primary key (except of 'scan' query), for effective management on tables you should 
+pay attention to such a flexible mechanism as indexes. It allows queries based on not-primary attributes.
 
-Первичный ключ может быть:
+Primary key can be:
  - partition key
  - partition and sort key.
 
-Amazon DynamoDB поддерживает два типа индексов.
+Amazon DynamoDB supports two types of indexes.
 
-| Тип индекса| Partion key | Sort key | Количество| Поддерживаемые запросы|
+| Type of indexes| Partition key | Sort key | Amount| Supported  queries|
 | :---         |     :---      |         :--- |:---:|:---: |
-| Локальный   | Совпадает с partion key таблицы   | Имеет иной sort key таблицы  |До 5 индексов|Scan|
-| Глобальный     |Может отличаться от partion key таблицы  | Может отличаться от sort key таблицы  |До 5 индексов|Query and Scan|
+| Local   | Coincide with partition key of table  | Has different sort key of table  |Until 5 indexes|Scan|
+| Global     |Can be differ from partition key of table  | Can be differ from sort key of table  |Until 5 indexes|Query and Scan|
 
-Благодаря тому, что элементы появляются в индексе только тогда, когда они существуют в таблице (являются разреженными объектами по отношению к остальным элементам таблицы), для которой задан индекс, запросы, обращенные к индексу, имеют очень высокую **эффективность**.
+Thanks to the fact that elements appear in the index only when they exist in the table (they are rare objects relative to the rest of the table elements) for which an index is specified, queries facing the index have a very high ** efficiency **.
 
-Локальный индекс потребляет выделенные ресурсы как часть таблицы, с которой связан. Он позволяет отрабатывать запросы по элементам, имеющим одинаковое значение partion key, но различные sort key. 
+Local index consumes allotted resources as the part of connected table. It allows execute elements by elements, that have equal partition key value, but different sort key. 
 
-Для глобальных можно настроить пропускную способностью независимо от таблицы, на которой они основаны, что позволяет перераспределить нагрузку таблицы. 
+You can tune throughput capacity independently from the table for global indexes. It allows reallocating the load of table.
 
-Индексировать можно такие типы как число, строка, бинарные данные. (Set, List и Map, не подлежат индексации).
+All scalar data types (number, string, binary, and boolean) can be used for the sort key element of the local secondary index key. Set, list, and map types cannot be indexed.
 
-## Как работать с DynamoDB
+## Getting Started With DynamoDb
 
-### Типы данных DynamoDb
+### Data Types DynamoDb
 
-|Наименование| Типы| Дополнительное описание|
+|Tittle| Types| Additional description|
 |--|--|--|
 |Scalar Types |String, Number, Binary, Boolean, Null |  |
-|Document Types |List [ … ], Map { … } - до 32 уровеня вложенности |Одновременно может содержать различные типы|
-|Set Types |String set, Number set, Binary set| Cодержит однотипные элементы|
+|Document Types |List [ … ], Map { … } - until 32 nesting level |At the same time, it can contain different types|
+|Set Types |String set, Number set, Binary set| Contains the same type elements|
 
-### Начало работы для Node js
+### The Beginning of Work for Node js
 
-Примеры можно взять на сайте [Amazone](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
+Examples can be taken from the site [Amazone](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
 
->Сразу стоит учесть, что большое значение придается ключам при работе с этой базой данных. Практически все запросы должны содержать явно заданные ключи для выполнения операций. В противном случае необходимо использовать Scan. 
->>При формировании запросов различного рода условия на ключевые и неключевые задаются отдельно.
+>It should be noted that great importance is attached to keys in working with this database. Almost all requests must contain explicitly specified keys for performing operations. Otherwise, you must use Scan.
+>>When formulating queries of various kinds, the conditions for key and non-key terms are set separately. 
 
 ### SDK
-Для удобной работы с DynamoDB стоит обратить внимание не на sdk [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), а на [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). Что позволяет не использовать громоздкую структуру описания типов данных в коде. JavaScript объекты автоматически преобразуются в объекты Amazon DynamoDB и обратно.
+For convenient work with DynamoDB, you should pay attention not to sdk [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), but on [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). That allows not to use the cumbersome structure of the description of data types in the code. JavaScript objects are automatically converted to Amazon DynamoDB objects and back.
