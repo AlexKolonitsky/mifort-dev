@@ -37,15 +37,15 @@ In addition, libraries have written for more languages for MongoDb.
 
 ## Performance Graphs
 
-![](https://github.com/PerminovaAnastasia/Images/blob/master/Рисунок1.png)
+![](https://github.com/PerminovaAnastasia/Images/blob/master/ГђГЁГ±ГіГ­Г®ГЄ1.png)
 
-![](https://github.com/PerminovaAnastasia/Images/blob/master/Рисунок2.png)
+![](https://github.com/PerminovaAnastasia/Images/blob/master/ГђГЁГ±ГіГ­Г®ГЄ2.png)
 
-![](https://github.com/PerminovaAnastasia/Images/blob/master/Рисунок3.png)
+![](https://github.com/PerminovaAnastasia/Images/blob/master/ГђГЁГ±ГіГ­Г®ГЄ3.png)
 
-![](https://github.com/PerminovaAnastasia/Images/blob/master/Рисунок4.png)
+![](https://github.com/PerminovaAnastasia/Images/blob/master/ГђГЁГ±ГіГ­Г®ГЄ4.png)
 
-![](https://github.com/PerminovaAnastasia/Images/blob/master/Рисунок5.png)
+![](https://github.com/PerminovaAnastasia/Images/blob/master/ГђГЁГ±ГіГ­Г®ГЄ5.png)
 
 # Conclusion
 In conclusion, DynamoDB and MongoDb are widespread representatives of NoSql databases, with many advantages, but also with certain shortcomings, in particular, there is a difference in performance. So, ease of maintenance is accompanied by some limitations, and vice versa, the configuration of all that is needed is maximally controlled, which also affects the complexity of the process. Therefore, it is worth to carefully study what manipulations with the base are necessary for your application and, based on this, choose the most suitable.
