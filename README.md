@@ -4,7 +4,7 @@
 * [Git](./tools/git.md) basics and workflow
 * [DynamoDB](./Article._DynamoDb.md)
 * [Handlebars](./Handlebars.md)
-* [DynamoDB vs MongoDB](./mifort-dev/DynamoDB_vs_MongoDB-translation.md)
+* [DynamoDB vs MongoDB](./DynamoDB_vs_MongoDB-translation.md)
 
 ## Presentations
 * [Handlebars - Igor](https://drive.google.com/open?id=0B1qS6sGXuV7wazEtanJLN3Exdms)
