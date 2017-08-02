@@ -1,5 +1,7 @@
 # Mifort Dev Zone
 
+Mifort Dev Zone is a portal which aim is to track Mifort employees professional development and provide the resources for it.
+
 ## Articles
 * [Git](./tools/git.md) basics and workflow
 * [DynamoDB](./Article._DynamoDb.md)
