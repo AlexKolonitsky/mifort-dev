@@ -1,40 +1,50 @@
 # Plan of Team's activities for a month:
-## 29.05 - 02.06
+## 31.07 - 04.08
 * ВТ 18:00
-Public Code Review - Андрей
+Public Code Review - Alex
 
 * СР 12:00 Training
-Alex - "Структурные паттерны: Composite, Decorator, Flyweight" - 60 min
+Web Applications Security - Ira
+Blockchain - Bogdan
+
+* ЧТ Performance Review
 
 * ЧТ 18:00 
-Психологические рисуночные тесты - Марта
+Teambuilding activity (HR Excersise) - Marta
 
-## 05.06 - 09.06
+## 07.08 - 11.08
 * ВТ 18:00 
-Public Code Review - Александр
+Public Code Review - Andrew
 
-* СР 12:00 Training
-Алекс - "Structural Patterns: Iterator, Observer, Strategy, Template Method" - 60 min
+* СР 12:00 Training - Alexey
 
 * ЧТ 18:00
-Film "Simple made easy" - Alex
+JS Quiz - Alex
 
-## 12.06 - 16.06
+## 14.06 - 18.06
 * ВТ 18:00 
-Public Code Review - Алексей
+Public Code Review - Alexey
 
-* СР 12:00 Training
-Андрей - "???" - 60 min
+* СР 12:00 Training - Alex
 
 * ЧТ 18:00 
-Eng Movie Night
+Board Games - Manar
 
-## 19.06 - 23.06
+## 21.08 - 25.08
 * ВТ 18:00 
-Public Code Review - Андрей
+Public Code Review - Alex
 
-* СР 12:00 Training
-Alex - "Структурные паттерны: Iterator, Observer, Strategy, Template Method" - 60 min
+* СР 12:00 Training - Andrew
 
 * ЧТ 18:00
-JS Quiz - Andrew
+Movie Night ' Snatch' - Marta 
+
+## 28.08 - 01.09
+
+* ВТ 18:00 
+Public Code Review - Andrew
+
+* СР 12:00 Training - Alexey
+
+* ЧТ 18:00 
+Psycological Tests - Marta
