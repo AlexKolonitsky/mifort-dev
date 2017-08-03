@@ -12,4 +12,4 @@ Mifort Dev Zone is a portal which aim is to track Mifort employees professional 
 
 ## Storages
 
-## Web evelopment
+## Web development
