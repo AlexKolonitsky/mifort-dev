@@ -7,8 +7,7 @@
 Итак, для примера я использую простую схему страницы и сверстаю ее используя Grid.
 Я выбрала несложную, регулярную структуру, так что тут как раз можно обойтись одним родительским контейнером, что вполне подойдет для “быстрого старта”. 
 
-[![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/CSS3_Grid_Layout/page-schema.png)]()
-
+![page-schema](/page-schema.png?raw=true)
 Для родительского контейнера я создала класс .grid-container, и добавила вертикальные линии: 
 ```css
 .grid-container {
@@ -63,16 +62,16 @@ grid-template-rows: [row-start] 100px [header-end content-start] auto [second-ro
 </body>
 ```
 А на странице получаю:
-[![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/CSS3_Grid_Layout/page-table.png)]()
+![page-schema](/page-table.png?raw=true)
 Можно сразу добавить отступы между блоками в .grid-container используя:
 ```css
  grid-column-gap: 15px;
  grid-row-gap: 15px;
 ```
 Отступы добавляются только между блоками, а внешние границы остаются на месте.
-[![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/CSS3_Grid_Layout/page-table-border.png)]()
+![page-schema](/page-table-border.png?raw=true)
 Теперь у меня есть пустой шаблон с нужными областями, относительно независимыми друг от друга, которые можно наполнить соответствующей информацией.
-[![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/CSS3_Grid_Layout/page-full.png)]()
+![page-schema](/page-full.png?raw=true)
 Причем не важно, где в HTML-коде находится каждый блок, отображаться он будет обласи заданной классами, а значит есть возможность легко изменять конфигурацию страницы. Например, чтобы поменять местами верхний левый и центральный левый блок при ширине экрана меньше 900px, достаточно медиазапроса:
 ```css
 @media (max-width: 900px) {
@@ -84,6 +83,6 @@ grid-template-rows: [row-start] 100px [header-end content-start] auto [second-ro
   }
 }
 ```
-[![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/CSS3_Grid_Layout/page-small.png)]()
+![page-schema](/page-small.png?raw=true)
 Конечно, это очень упрощенный шаблон, и в реальном проекте гораздо больше нюансов, но так достаточно, чтобы получить первые впечатления: поначалу способ записи новых свойств может показаться громоздким, однако я уверена, что эта сложность на старте позволит гораздо проще работать со страницей в дальнейшем. Grid layout обладает не таким уж большим количеством свойств, часть из которых пришли сюда непосредственно из флекса, тем не менее имеет существенное концептуальное отличие, которое, вполне возможно, позволит CSS3 поспорить с некоторыми фреймворками в удобстве и гибкости верстки. И хотя я уверена, что при практическом использовании в Grid layout найдутся свои недостатки, мне безусловно хотелось бы испробовать ее на своих будущих проектах.
  
