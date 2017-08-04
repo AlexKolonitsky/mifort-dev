@@ -3,7 +3,7 @@
 Mifort Dev Zone is a portal which aim is to track Mifort employees professional development and provide the resources for it.
 
 ## Backend
-Nick - React: The Basics
+НАДО НАЙТИ Nick - React: The Basics
 
 ## Deployment
 [Gulp_Sergey](./Deployment/Gulp_Sergey.md)
@@ -32,8 +32,5 @@ Nick - Vue.js: The Basics
 [FTP_Sergey](./Storages/FTP_Sergey.md)
 
 ## Web development
-Ivan - EcmaScript6 ?
-Igor - SailsJS ?
-Ivan - TypeScript ?
 НАДО НАЙТИ Sergey - http
 НАДО ЗАЛИТЬ Manar - Postman to be downloded
