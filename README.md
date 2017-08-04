@@ -10,8 +10,11 @@ Nick - React: The Basics
 
 ## Frontend
 [Ionic_Ira](./Frontend/Ionic_Ira.md)
+
 [Why I hate&love Angular_Alexey](./Frontend/Why_I_hate&love_Angular-Alexey.md)
+
 [ngModelOptions](./Frontend/ngModelOptions.md)
+
 Nick - Vue.js: The Basics
 
 ## Programming
