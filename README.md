@@ -19,12 +19,16 @@ Nick - Vue.js: The Basics
 
 ## Programming
 [Closures_Sergey](./Programming/Closures_Sergey.md)
+
 [RegExp_Sergey](.Programming/Closures_Sergey.md)
+
 [Unit vs Integration tests](./Programming/Unit_vs_Integration_+_mock_vs_stub.md)
 
 ## Storages
 [Dynamo DB_Nastya](./Storages/DynamoDB_Nastya.md)
+
 [DynamoDB vs Mongo_Nastya](./Storages/ENG.DynamoDB_vs_MongoDB-Nastya.md)
+
 [FTP_Sergey](./Storages/FTP_Sergey.md)
 
 ## Web development
