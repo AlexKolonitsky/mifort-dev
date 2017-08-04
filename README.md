@@ -6,7 +6,7 @@ Mifort Dev Zone is a portal which aim is to track Mifort employees professional 
 Nick - React: The Basics
 
 ## Deployment
-Sergey - Gulp
+[Gulp_Sergey](./Deployment/Gulp_Sergey.md)
 
 ## Frontend
 Ira - Ionic
