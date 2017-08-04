@@ -3,7 +3,7 @@
 Mifort Dev Zone is a portal which aim is to track Mifort employees professional development and provide the resources for it.
 
 ## Backend
-НАДО НАЙТИ Nick - React: The Basics
+[React: The Basics_Nick](./Backend/React:_TheBasics_Nick.md)
 
 ## Deployment
 [Gulp_Sergey](./Deployment/Gulp_Sergey.md)
