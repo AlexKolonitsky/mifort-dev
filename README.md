@@ -9,23 +9,24 @@ Nick - React: The Basics
 [Gulp_Sergey](./Deployment/Gulp_Sergey.md)
 
 ## Frontend
-Ira - Ionic
-Alexey - Why I hate Angular
-Sergey - ngModelOptions
+[Ionic_Ira](./Frontend/Ionic_Ira.md)
+[Why I hate&love Angular_Alexey](./Frontend/Why_I_hate&love_Angular-Alexey.md)
+[ngModelOptions](./Frontend/ngModelOptions.md)
 Nick - Vue.js: The Basics
 
 ## Programming
-Sergey - Closures
-Sergey - RegExp
-Nastya - Unit vs Integration+mock vs stub ?
+[Closures_Sergey](./Programming/Closures_Sergey.md)
+[RegExp_Sergey](.Programming/Closures_Sergey.md)
+[Unit vs Integration tests](./Programming/Unit_vs_Integration_+_mock_vs_stub.md)
 
 ## Storages
-Nastya - Dynamo DB
-Nastya - DynamoDB vs Mongo
+[Dynamo DB_Nastya](./Storages/DynamoDB_Nastya.md)
+[DynamoDB vs Mongo_Nastya](./Storages/ENG.DynamoDB_vs_MongoDB-Nastya.md)
+[FTP_Sergey](./Storages/FTP_Sergey.md)
 
 ## Web development
 Ivan - EcmaScript6 ?
 Igor - SailsJS ?
 Ivan - TypeScript ?
-Sergey - http
-Manar - Postman ?
+НАДО НАЙТИ Sergey - http
+НАДО ЗАЛИТЬ Manar - Postman to be downloded
