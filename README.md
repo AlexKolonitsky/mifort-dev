@@ -15,7 +15,7 @@ Mifort Dev Zone is a portal which aim is to track Mifort employees professional 
 
 [ngModelOptions](./Frontend/ngModelOptions.md)
 
-Nick - Vue.js: The Basics
+[Vue.js: The Basics_Nick](./Frontend/Vue.js: The Basics_Nick.md)
 
 ## Programming
 [Closures_Sergey](./Programming/Closures_Sergey.md)
