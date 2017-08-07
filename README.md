@@ -32,6 +32,13 @@
 [FTP_Sergey](./Storages/FTP_Sergey.md)
 
 ## Web development
+
+[Type Script_Ivan](./Web_Development/Type_Script_Ivan.md)
+
+[HTML5_Tags_Igor](./Web_Development/HTML5_Tags_Igor)
+
+[Handlebars_Igor](./Web_Development/Handlebars_Igor.md)
+
 _НАДО НАЙТИ Sergey - http_
 
 _НАДО ЗАЛИТЬ Manar - Postman to be downloded_
