@@ -17,6 +17,8 @@
 
 [Vue.js_The_Basics_Nick](./Frontend/Vue.js_The_Basics_Nick.md)
 
+[Angular 2_Ivan](.Frontend/Angular_2_Ivan.md)
+
 ## Programming
 [Closures_Sergey](./Programming/Closures_Sergey.md)
 
