@@ -1,6 +1,6 @@
 # Mifort Dev Zone
 
-# Mifort Dev Zone is a portal which aim is to track Mifort employees professional development and provide the resources for it.
+**Mifort Dev Zone is a portal which aim is to track Mifort employees professional development and provide the resources for it.**
 
 ## Backend
 [React: The Basics_Nick](./Backend/React:_TheBasics_Nick.md)
@@ -32,6 +32,6 @@
 [FTP_Sergey](./Storages/FTP_Sergey.md)
 
 ## Web development
-_НАДО НАЙТИ Sergey - http
+_НАДО НАЙТИ Sergey - http_
 
-_НАДО ЗАЛИТЬ Manar - Postman to be downloded
+_НАДО ЗАЛИТЬ Manar - Postman to be downloded_
