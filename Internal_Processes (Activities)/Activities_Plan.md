@@ -3,10 +3,10 @@
 * ВТ 18:00 Public Code Review - Alex
 
 * СР 12:00 Training
-Web Applications Security - Ira
+Web Applications Security - Ira;
 Blockchain - Bogdan
 
-* ЧТ 14:00 Performance Review
+* ЧТ 14:00 Performance Review;
      18:00 Teambuilding activity - Marta
 
 ## 07.08 - 11.08
@@ -16,7 +16,7 @@ Blockchain - Bogdan
 Postman - Manar (1h)
 
 * ЧТ 18:00
-English Test - Marta
+English Test - Marta;
 JS Quiz - Alex
 
 ## 14.06 - 18.06
