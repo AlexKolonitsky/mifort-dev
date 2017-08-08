@@ -5,4 +5,4 @@
 2. [Обмен Diamonds](https://github.com/AlexKolonitsky/mifort-internal/blob/master/gamification/Diamonds_Exchange_Participants.md)
 
 **Planets**
-[Фатамацу](https://github.com/AlexKolonitsky/mifort-internal/blob/master/gamification/Partic_Planets/1st%20Planet.md)
+1. [Фатамацу](https://github.com/AlexKolonitsky/mifort-internal/blob/master/gamification/Partic_Planets/1st%20Planet.md)
