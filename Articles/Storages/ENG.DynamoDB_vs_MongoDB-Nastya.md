@@ -28,13 +28,13 @@ This ideological difference in the performance of these properties affects the o
 
 Among advantages of DynamoDb are: 
 
-> Automation of performance monitoring and minimization of delays in updating data, even in different regions.
+* Automation of performance monitoring and minimization of delays in updating data, even in different regions.
 
-> Amazon allows you to configure alerts for various critical changes.
+* Amazon allows you to configure alerts for various critical changes.
 
 **BUT** a strong disadvantage here is the following: 
 
-> You need to change the configuration, create additional replicas, clusters, implement sharding in MongoDb in manual mode, which is very problematic for an already running application.
+* You need to change the configuration, create additional replicas, clusters, implement sharding in MongoDb in manual mode, which is very problematic for an already running application.
 
 
 As for transactions on the principle of *sql*, as well as in many NoSql databases, they are not provided. However, in MongoDb this mechanism can be implemented using atomic operations, for example *findAndModify(document)*, etc. 
