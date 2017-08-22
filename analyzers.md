@@ -6,3 +6,4 @@
 1. http://neilpatel.com/seo-analyzer/
 2. https://gtmetrix.com/ 
 3. https://seositecheckup.com/
+4. https://developers.google.com/speed/pagespeed/insights/
