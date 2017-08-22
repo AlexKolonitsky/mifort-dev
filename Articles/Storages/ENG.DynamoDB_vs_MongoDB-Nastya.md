@@ -9,9 +9,7 @@ not the fact of adjustment, but the intensity of use is the basic idea of paymen
 ## Query Features in DynamoDB and MongoDb
 
 If you pay attention to the query language working with DynamoDb, you may notice some crockness, in comparison with MongoDb, when trying to use complex structures. It should be noted that there are various restrictions when working with queries in DynamoDb, the main idea is to work through keys. In this database, you can observe a clear and fixed separation of key (sorted and partition keys) and 	non-vehicle fields. 
-There exists such functionality as indexes: local and global for variable work with data not only by the key. 
-
-//странная структура, не понятно, что хотела сказать
+There exists such functionality as indexes: local and global for different types of work with data, not only by the key. 
 
 But working with it requires additional practice. Also, certain restrictions are placed on indexes that affect the following points: the number of indexes per table (you can enter no more than 5 of each type), the format of the queries (in particular the partition key), which in turn complicates the search by non-vehicle fields. 
 > It should be taken into account that local indexes are created at the time of creating the table, so it is worthwhile to consider the necessity of having them in beforehand.
