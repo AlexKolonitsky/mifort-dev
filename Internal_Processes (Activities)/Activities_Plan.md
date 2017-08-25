@@ -2,6 +2,7 @@
 ## 28.08 - 01.09
 * ВТ 18:00 Public Code Review - Alex
 * СР 12:00 Training - Sergey
+* Performance Review
 * ЧТ 18:00 Psychological play - Marta
 
 ## 04.09 - 08.09
@@ -25,6 +26,5 @@
 ## 25.09 - 29.09
 * ВТ 18:00 Public Code Review - Andrew
 * СР 12:00 Training - Alexey
-* Performance Review
 * ЧТ 18:00 Interview Training - Marta
 
