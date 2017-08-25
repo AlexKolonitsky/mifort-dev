@@ -19,12 +19,12 @@
 ## 18.09 - 22.09
 * ВТ 18:00 Public Code Review - Alex
 * СР 12:00 Training - Alex
-* Performance Review
 * ЧТ 18:00 Movie Night ‘Black Mirror’- Marta
  
 
 ## 25.09 - 29.09
 * ВТ 18:00 Public Code Review - Andrew
 * СР 12:00 Training - Alexey
+* Performance Review
 * ЧТ 18:00 Interview Training - Marta
 
