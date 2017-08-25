@@ -3,7 +3,7 @@
 * ВТ 18:00 Public Code Review - Alex
 * СР 12:00 Training - Sergey
 * ЧТ 18:00 Psychological play - Marta
-Performance Review
+* Performance Review
 
 ## 04.09 - 08.09
 * ВТ 18:00 Public Code Review - Andrew
