@@ -6,7 +6,6 @@
 
 ## 04.09 - 08.09
 * ВТ 18:00 Public Code Review - Andrew
-* Performance Review
 * СР 12:00 Training - Andrew
 * ЧТ 18:00 JS Quiz - Alex
 
@@ -20,6 +19,7 @@
 ## 18.09 - 22.09
 * ВТ 18:00 Public Code Review - Alex
 * СР 12:00 Training - Alex
+* Performance Review
 * ЧТ 18:00 Movie Night ‘Black Mirror’- Marta
  
 
