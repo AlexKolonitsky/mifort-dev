@@ -3,26 +3,26 @@
 If you have necessity in NoSQL database with fast performance and effective scalability, and you don't want to reinvent the wheel for management of such elements as 
 
 * commissioning 
-* setting and configuration of equipment
+* equipment setting and configuration
 * replication
 * software patching
 * cluster scaling
 
 Amazon DynamoDb will be a good decision.
 
-DynamoDB is a key-value (work on data occurs with a help of key) and document data structures (you can query and update items in a document format such as JSON, XML, and HTML).
+DynamoDB is key-value (work on data occurs with a help of key) and has document data structure (you can query and update items in a document format such as JSON, XML, HTML, etc.).
 
->DynamoDB as the representative of non-relational database doesn't support composite queries based on joins or complex transactions.
+> As the representative of non-relational databases DynamoDB doesn't support composite queries based on joins or complicated transactions.
 
-Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). In case of larger objects (for example not structured BLOB-objects) you can use following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size capacity of data. However you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
 
-## Customizable Services of DynamoDB
+## DynamoDB Customizable Services
 
-In contrast to many others databases, the addition of any improvements for working with database is possible to organize in a few clicks. Here are some examples.
+In contrast to many other databases, the addition of any improvements for working there is possible to organize in few clicks. Here are some examples.
 
 ### FGAC - Fine-Grained Access Control
-It is a good idea to implement FGAC in purpose to restrict access to your DB on top-level attributes in your document. It works through the secret access token.
-There is no additional payment.
+It's comfortable to implement FGAC in purpose to restrict access to your DB on top-level attributes in your document. It works through the secret access token.
+There's no additional payment.
 
 ### Consistency of Data
 It determines by the time in which the result of writing the data is successfully done in a subsequent reading of the element.
@@ -61,7 +61,7 @@ The third updating must be after the first, but there are no guarantees that the
 ```
 You can read updates from your stream in DynamoDB Streams at up to twice the rate of the provisioned write capacity of your DynamoDB table. 
 
-You can manage data in console in such a way: the name of the key, the item before (old item) and after (new item) and the type of updating (INSERT, REMOVE èëè MODIFY).
+You can manage data in console in such a way: the name of the key, the item before (old item) and after (new item) and the type of updating (INSERT, REMOVE Ã¨Ã«Ã¨ MODIFY).
 
 ### Triggers
 DynamoDB Triggers is a mechanizm that admit to execute custom actions on the assumption of on item-level updates on a table. So, you can specify it with a help of this algorithm:
@@ -72,7 +72,7 @@ DynamoDB Triggers is a mechanizm that admit to execute custom actions on the ass
 >Payment is for the time execution
 
 ### Time-to-Live (TTL)
-Time-to-Live is a mechanism that lets you set a specific timestamp to delete expired items from your tables, when timestamp is reached.  This attribute is in POSIX format - storage time in seconds from January 1, 1970ã.
+Time-to-Live is a mechanism that lets you set a specific timestamp to delete expired items from your tables, when timestamp is reached.  This attribute is in POSIX format - storage time in seconds from January 1, 1970Ã£.
 
 For example, it is used for deleting event logs, usage history, session data, etc. 
 
@@ -88,9 +88,9 @@ Such mechanism works on the principle of least cost and tries not to divert reso
 ##### Table of the calculation of throughput capacity
 | read/write capacity unit | Number of item per second | Units of Capacity|
 | :---         |     :---:      |          ---: |
-| Write  | 1     | less or equal 1ÊÂ    |
-| Strongly Consistent Read  | 1      | less or equal 4ÊÂ |
-| Eventual Consistency Reads  | 2       | less or equal 4ÊÂ     |
+| Write  | 1     | less or equal 1ÃŠÃ‚    |
+| Strongly Consistent Read  | 1      | less or equal 4ÃŠÃ‚ |
+| Eventual Consistency Reads  | 2       | less or equal 4ÃŠÃ‚     |
 
 ##### Formula
 ```
@@ -99,13 +99,13 @@ Units of Capacity required for assignment = Number of item per second * Math.cei
 ##### Example
 
 ```
-So, if we write blocks of the size less then 1ÊÂ and need execute 100 operation per second, that needless amount of resources for writing is 100. 
+So, if we write blocks of the size less then 1ÃŠÃ‚ and need execute 100 operation per second, that needless amount of resources for writing is 100. 
 In case if we read 1.5Kb - we need 200 units of resources for provision 100 operation per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 ```
 
 The least throughput capacity - 1 write unit and 1 read unit. You can increase your provisioned throughput as often as you want, decrease - 4 times.
 
->Note that if you want to determine units of any capacity you should pay your attention not to the number of items have been read per second, but the number of API calls. For instance, your application should read 300 items per second from table, and if your items are 4KB or less, then you need 300 units of Read Capacity. It doesn’t matter to do 300 separate GetItem calls or 30 BatchGetItem calls that each returns 10 items.
+>Note that if you want to determine units of any capacity you should pay your attention not to the number of items have been read per second, but the number of API calls. For instance, your application should read 300 items per second from table, and if your items are 4KB or less, then you need 300 units of Read Capacity. It doesnâ€™t matter to do 300 separate GetItem calls or 30 BatchGetItem calls that each returns 10 items.
 
 ### Global and Local Indexes 
 
@@ -138,7 +138,7 @@ For the sort key element can be used all scalar types of data: number, string, b
 |Tittle| Types| Additional description|
 |--|--|--|
 |Scalar Types |String, Number, Binary, Boolean, Null |  |
-|Document Types |List [ … ], Map { … } - until 32 nesting level |At the same time, it can contain different types|
+|Document Types |List [ â€¦ ], Map { â€¦ } - until 32 nesting level |At the same time, it can contain different types|
 |Set Types |String set, Number set, Binary set| Contains the same type elements|
 
 ### The Beginning of Work for Node js
