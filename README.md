@@ -2,6 +2,8 @@
 
 **Mifort Dev Zone is a portal which aim is to track Mifort employees' professional development, provide resources for it and encourage peer-collegue co-operation.**
 
+[Bibliography](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Bibliography.md)
+
 ## Backend
 [React: The Basics_Nick](./Articles/Backend/React:_TheBasics_Nick.md)
 
