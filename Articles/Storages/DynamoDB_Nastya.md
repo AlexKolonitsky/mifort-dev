@@ -14,7 +14,7 @@ DynamoDB is a key-value (work on data occurs with a help of key) and document da
 
 >DynamoDB as the representative of non-relational database doesn't support composite queries based on joins or complex transactions.
 
-Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However you should interact with the size of objects between 1 byte and 400KB for effective queries (wtiting, reading). In case of larger objects (for example not structured BLOB-objects) you can use following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However, you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). In case of larger objects (for example not structured BLOB-objects) you can use following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
 
 ## Customizable Services of DynamoDB
 
