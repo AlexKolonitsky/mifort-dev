@@ -2,7 +2,7 @@
 
 The essential difference between these two NoSql databases is not only the syntax and the query principle, but also an important point of the architecture itself and the accompanying services. 
 
-Cloud Platform Amazon assumes responsibility for installation, maintenance and implementation of all additional services. All that you need is to click on the required elements in a management console. Definitely, payment is charged for separate moments. At the same time, 
+Amazon Cloud Platform assumes responsibility for installation, maintenance and implementation of all additional services. All that you need is to click on the required elements in a management console. Definitely, payment is charged for separate moments. At the same time, 
 not the fact of adjustment, but the intensity of use is the basic idea of payment in Amazon DynamoDb. It is good for applications which can significantly expand in the future. When choosing DynamoDb, it will occur without significant efforts from the developers. So, you can increase the bandwidth, make replicas of the database in different regions, adjust the data consistency, provide security policy and so on in few clicks. 
 > There is a local version of DynamoDb. Its application is basically taken down to the development and testing of the application and the database. However, DynamoDb is usually used as an Amazon service. While MongoDb is often installed and configured locally on the server. 
 
