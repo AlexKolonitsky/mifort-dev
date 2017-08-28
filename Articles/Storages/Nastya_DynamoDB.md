@@ -1,11 +1,11 @@
 # DynamoDb
 
-If you have necessity in NoSQL database with fast performance and effective scalability, and you don't want to reinvent the wheel for management of such elements as 
+If you have necessity in fast NoSQL database with effective scalability, and you don't want to reinvent the wheel for management of such elements as 
 
 * commissioning 
 * equipment setting and configuration
-* replication
 * software patching
+* replication
 * cluster scaling
 
 Amazon DynamoDb will be a good decision.
@@ -14,7 +14,7 @@ DynamoDB is key-value (work on data occurs with a help of key) and has document 
 
 > As the representative of non-relational databases DynamoDB doesn't support composite queries based on joins or complicated transactions.
 
-Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size capacity of data. However you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size data capacity. However you should interact in the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
 
 ## DynamoDB Customizable Services
 
@@ -28,7 +28,7 @@ There's no additional payment.
 It determines by the time in which the result of writing the data is successfully done in a subsequent reading of the element.
 * eventual consistency of data maximizes read throughput
 
-  >As a rule, data is become consistent in a second.
+  > As a rule, data is become consistent in a second.
 
 *  strongly consistent of data returns all records that received successful response of updating operations.
   
