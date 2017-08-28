@@ -57,11 +57,11 @@ You have following order of updating
 	1. First player has 100 points
 	2. Second player - 50 points
 	3. First player - 70 points
-The third updating must be after the first, but there is no guarantees that the second will be between the 1st and 3rd. 
+The third updating must be after the first, but there are no guarantees that the second will be between the 1st and 3rd. 
 ```
 You can read updates from your stream in DynamoDB Streams at up to twice the rate of the provisioned write capacity of your DynamoDB table. 
 
-You can manage data in console in such a way: the name of the key, the item before (old item) and after (new item) and the type of updating (INSERT, REMOVE или MODIFY).
+You can manage data in console in such a way: the name of the key, the item before (old item) and after (new item) and the type of updating (INSERT, REMOVE or MODIFY).
 
 ### Triggers
 DynamoDB Triggers is a feature which allows you to execute custom actions based on item-level updates on a DynamoDB table. You can specify the custom action in following:
@@ -76,7 +76,7 @@ Time-to-Live is a mechanism that lets you set a specific timestamp to delete exp
 
 For example, it is used for deleting event logs, usage history, session data, etc. 
 
-Such mechanism works on the principle of least cost and tries not to divert resources from other more important tasks.
+Such mechanism works on the principle of the least cost and tries not to divert resources from other more important tasks.
 
 >Deletion occurs in 2 days in background
  
@@ -99,7 +99,7 @@ Units of Capacity required for assignment = Number of item per second * Math.cei
 ##### Example
 
 ```
-So, if we write blocks of the size less then 1КВ and need execute 100 operation per second, that needless amount of resources for writing is 100. 
+So, if we write blocks of the size less than 1КВ and need execute 100 operation per second, that needless amount of resources for writing is 100. 
 In case if we read 1.5Kb - we need 200 units of resources for provision 100 operation per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 ```
 
@@ -121,7 +121,7 @@ Amazon DynamoDB supports two types of indexes.
 | Type of indexes| Partition key | Sort key | Amount| Supported  queries|
 | :---         |     :---      |         :--- |:---:|:---: |
 | Local   | Coincide with partition key of table  | Has different sort key of table  |Until 5 indexes|Scan|
-| Global     |Can be differ from partition key of table  | Can be differ from sort key of table  |Until 5 indexes|Query and Scan|
+| Global     |Can differ from partition key of table  | Can differ from sort key of table  |Until 5 indexes|Query and Scan|
 
 Thanks to the fact that elements appear in the index only when they exist in the table (they are rare objects relative to the rest of the table elements) for which an index is specified, queries facing the index have a very high ** efficiency **.
 
@@ -143,10 +143,10 @@ All scalar data types (number, string, binary, and boolean) can be used for the 
 
 ### The Beginning of Work for Node js
 
-Examples can be taken from the site [Amazone](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
+Examples can be taken from the site [Amazon](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
 
 >It should be noted that great importance is attached to keys in working with this database. Almost all requests must contain explicitly specified keys for performing operations. Otherwise, you must use Scan.
 >>When formulating queries of various kinds, the conditions for key and non-key terms are set separately. 
 
 ### SDK
-For convenient work with DynamoDB, you should pay attention not to sdk [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), but on [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). That allows not to use the cumbersome structure of the description of data types in the code. JavaScript objects are automatically converted to Amazon DynamoDB objects and back.
+For convenient work with DynamoDB, you should pay attention not to SDK [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), but on [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). That allows not to use the cumbersome structure of the description of data types in the code. JavaScript objects are automatically converted to Amazon DynamoDB objects and back.
