@@ -3,20 +3,20 @@
 If you have necessity in NoSQL database with fast performance and effective scalability, and you don't want to reinvent the wheel for management of such elements as 
 
 * commissioning 
-* setting and configuration of equipment
+* equipment setting and configuration
+* patching of software 
 * replication
-* software patching
 * cluster scaling
 
-Amazon DynamoDb will be a good decision.
+Amazon DynamoDb is a great decision.
 
 DynamoDB is a key-value (work on data occurs with a help of key) and document data structures (querying and updating items in a document format such as JSON, XML, and HTML).
 
 >DynamoDB as the representative of non-relational database doesn't support composite queries based on joins or complex transactions.
 
-Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However, you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). In case of larger objects (for example not structured BLOB-objects) you can use following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on throughput but not on the storage size capacity of data. However, you should interact with the size of objects between 1 byte and 400KB for effective queries (writing, reading). In case of larger objects (for example not structured BLOB-objects) you can work with the following bundle of services: Amazon S3 - for storage of wealth of information, but DynamoDB - pointer on it.
 
-## Customizable Services of DynamoDB
+## DynamoDB Customizable Services
 
 In contrast to many others databases, the addition of any improvements for working with database is possible to organize in a few clicks. Here are some examples.
 
@@ -141,7 +141,7 @@ All scalar data types (number, string, binary, and boolean) can be used for the 
 |Document Types |List [ … ], Map { … } - until 32 nesting level |At the same time, it can contain different types|
 |Set Types |String set, Number set, Binary set| Contains the same type elements|
 
-### The Beginning of Work for Node js
+### The Beginning of Work for Node.js
 
 Examples can be taken from the site [Amazon](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
 
