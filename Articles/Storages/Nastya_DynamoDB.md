@@ -62,12 +62,12 @@ Reading updates from the stream occurs with the speed twice as fast as the speed
 Also there is good opportunity to manage data in console in such a way: the name of the key, the item before (old one) and after (new one) and the type of updating (INSERT, REMOVE or MODIFY).
 
 ### Triggers
-DynamoDB Triggers is a mechanism that admit to execute custom actions if there were some updates on item level in the table. So, you can specify it with a help of this algorithm:
-* The custom logic (code of trigger) is stored in AWS function as code
+DynamoDB Triggers is a mechanism that admits to execute custom actions if there were any updates on item level in the table. So, you can specify it with the help of this algorithm:
+* The custom logic (code of trigger) is stored in AWS function as a code
 * Associate an AWS Lambda function to the stream (via DynamoDB Streams) on a table
 * AWS Lambda reads the updates from the associated stream and executes the code in the function.
 
->Payment is made only for execution time
+> Payment is made only for execution time
 
 ### Time-to-Live (TTL)
 Time-to-Live is a mechanism which lets you define a specific timestamp to delete expired items from your tables, when timestamp is reached. This attribute is in POSIX format - storage time in seconds from January 1, 1970.
@@ -76,7 +76,7 @@ For example, it is used for deleting event logs, usage history, session data, et
 
 Such mechanism works on the principle of least cost and tries not to divert resources from other more important tasks.
 
->Deletion occurs in 2 days in background
+> Deletion occurs in 2 days in background
 
 ### Throughput Capacity
 
@@ -97,29 +97,29 @@ Required units = Amount of items per second * Math.ceil( necessary block  / tabl
 ##### Example
 
 
-So, if we write blocks with the size less than 1KB and need to execute 100 operation per second, that needless quantity of resources for writing is 100.
-In case if we read 1.5Kb - we need 200 units of resources for provision 100 operation per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
+So, if we write blocks with the size less than 1KB and need to execute 100 operations per second, that needless quantity of resources for writing is 100.
+In case if we read 1.5Kb - we need 200 units of resources for provision of 100 operations per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 
 
-The least throughput capacity - 1 write unit and 1 read unit. Amazon provides possibility of increasing provisioned throughput as often as you want, decreasing - 4 times.
+The least throughput capacity - 1 write unit and 1 read unit. Amazon provides possibility of increasing provisioned throughput as often as you want, as for decreasing it's only 4 times.
 
->Note that if you having necessity to determine units of any capacity you should pay your attention not to the quantity of items have been read per second, but the quantity of API calls. For instance, your application should read 300 items per second from table, and if each item is 4KB or less, then you need 300 units of read capacity. It makes no difference to do 300 separate GetItem calls or 30 BatchGetItem ones each returning 10 items.
+> Note that if you are willing to determine units of any capacity you should pay your attention not to the quantity of items have been read per second, but the quantity of API calls. For instance, your application should read 300 items per second from table, and if each item is 4KB or less, then you need 300 units of read capacity. It makes no difference to do 300 separate GetItem calls or 30 BatchGetItem ones each returning 10 items.
 
 ### Global and Local Indexes
 
-Because the requests are made only with primary key (except of 'scan' query), for effective management on tables you should
-pay attention to such a flexible mechanism as indexes. It allows queries based on not-primary attributes.
+Since the requests are made only with primary key (except of 'scan' query), for effective tables' management you should
+pay attention to such flexible mechanism as indexes. It allows queries based on not-primary attributes.
 
 Primary key can be:
 - partition key
 - partition and sort key.
 
-Also there is two types of indexes in DynamoDB.
+Also there are two types of indexes in DynamoDB.
 
 | Type of indexes| Partition key | Sort key | Amount| Supported  queries|
 | :---        |    :---      |        :--- |:---:|:---: |
 | Local  | Coincide with partition key of table  | Has various sort key of table  |Until 5 indexes|Scan|
-| Global    |Can be differ from partition key of table  | Can be differ from sort key of table  |Until 5 indexes|Query and Scan|
+| Global    |Can differ from partition key of table  | Can differ from sort key of table  |Until 5 indexes|Query and Scan|
 
 Attributes will appear in indexes only if they are in the table (so, their amount is less in comparison with other attributes). Thanks to this fact queries facing the index have a very high ** efficiency **.
 
