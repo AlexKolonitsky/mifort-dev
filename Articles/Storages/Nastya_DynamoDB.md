@@ -12,9 +12,9 @@ Amazon DynamoDb will be a good solution.
 
 DynamoDB is key-value (work on data occurs with a help of key) and has document data structure (you can query and update items in a document format such as JSON, XML, HTML, etc.).
 
-> As the representative of non-relational databases DynamoDB doesn't support composite queries based on joins or complicated transactions.
+> As the representative of non-relational databases, DynamoDB doesn't support composite queries based on joins or complicated transactions.
 
-Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size data capacity. However you should interact in the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size data capacity. However, you should interact in the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
 
 ## DynamoDB Customizable Services
 
@@ -30,20 +30,20 @@ It determines by the time in which the result of writing the data is successfull
 
 > Generally, data is become consistent in a second.
 
-*  strongly consistent of data returns all records that received successful response after updating operations.
+* strongly consistent of data returns all records that received successful response after updating operations.
 
 ### Cross-region Replication
 
-If you want to work with replicas(exact copies) of master table, it will be a good decision to pay attention to this feature. Needless to add, that Amazon provides the opportunity to make replicas in great variety of regions. Benefits of using:
+If you want to work with replicas (exact copies) of master table, it will be a good decision to pay attention to this feature. There is no need to add, that Amazon provides the opportunity to make replicas in great variety of regions. Benefits of using:
 1. Effective disaster recovery
-2. Quicker reads for users in regions distinct from the main is situated
+2. Faster reads for users situated in regions distinct from the main one
 3. Easier traffic management
-4. Comfortable regional migration without stopping work
->Furthermore, schema of prices for replications is identical as for master table: only for used resources, no additional charge.
+4. Comfortable regional migration without distracting from work
+> Furthermore, schema of prices for replications is identical as for master table: only for used resources, no additional charge.
 
 ### DynamoDB Streams
 
-Items in your table changeable and you don't want to throttle table with requests? There can be find good possibility - DynamoDB Streams, which saves in chronological sequence format(in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
+Items in your table are changeable and you don't want to throttle table with requests? You may appreciate one more good possibility - DynamoDB Streams, which saves data in chronological sequence format (in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
 
 Don't forget to activate this feature separately for each table.
 
@@ -51,13 +51,13 @@ Changes made to any individual item will appear in the correct order.
 
 **Example**
 
-You have following order of updating
+You have the following order of updating:
 1. First player has 100 points
 2. Second player - 50 points
 3. First player - 70 points
 The third updating must be after the first, but there are no guarantees that the second will be between the 1st and 3rd.
 
-Reading updates from the stream occurs with the speed up to twice the speed of the provisioned write capacity within your table.
+Reading updates from the stream occurs with the speed twice as fast as the speed of the provisioned write capacity within your table.
 
 Also there is good opportunity to manage data in console in such a way: the name of the key, the item before (old one) and after (new one) and the type of updating (INSERT, REMOVE or MODIFY).
 
@@ -92,12 +92,12 @@ Such mechanism works on the principle of least cost and tries not to divert reso
 
 ##### Formula
 
-Required units = Number of item per second * Math.ceil( necessary block  / table capacity unit)
+Required units = Amount of items per second * Math.ceil( necessary block  / table capacity unit)
 
 ##### Example
 
 
-So, if we write blocks with the size less then 1KB and need execute 100 operation per second, that needless quantity of resources for writing is 100.
+So, if we write blocks with the size less than 1KB and need to execute 100 operation per second, that needless quantity of resources for writing is 100.
 In case if we read 1.5Kb - we need 200 units of resources for provision 100 operation per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 
 
