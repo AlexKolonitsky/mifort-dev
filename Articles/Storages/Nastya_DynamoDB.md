@@ -101,9 +101,9 @@ So, if we write blocks with the size less than 1KB and need to execute 100 opera
 In case if we read 1.5Kb - we need 200 units of resources for provision of 100 operations per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 
 
-The least throughput capacity - 1 write unit and 1 read unit. Amazon provides possibility of increasing provisioned throughput as often as you want, as for decreasing it's only 4 times.
+The least throughput capacity - 1 write unit and 1 read unit. Amazon provides possibility of increasing contributed output as often as you want, as for decreasing it's only 4 times.
 
-> Note that if you are willing to determine units of any capacity you should pay your attention not to the quantity of items have been read per second, but the quantity of API calls. For instance, your application should read 300 items per second from table, and if each item is 4KB or less, then you need 300 units of read capacity. It makes no difference to do 300 separate GetItem calls or 30 BatchGetItem ones each returning 10 items.
+> Note that if you are willing to determine units of any capacity you should pay your attention not to the quantity of items have been read per second, but the quantity of API calls. For instance, your application should read from table 300 items per second, and if each item is 4KB or less, then you need 300 units of read capacity. It makes no difference to do 300 separate GetItem calls or 30 BatchGetItem ones each returning 10 items.
 
 ### Global and Local Indexes
 
@@ -114,7 +114,7 @@ Primary key can be:
 - partition key
 - partition and sort key.
 
-Also there are two types of indexes in DynamoDB.
+Also there are 2 indexes' types in DynamoDB.
 
 | Type of indexes| Partition key | Sort key | Amount| Supported  queries|
 | :---        |    :---      |        :--- |:---:|:---: |
