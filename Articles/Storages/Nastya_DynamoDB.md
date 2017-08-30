@@ -14,13 +14,13 @@ DynamoDB is key-value (work on data occurs with a help of key) and has document 
 
 > As the representative of non-relational databases, DynamoDB doesn't support composite queries based on joins or complicated transactions.
 
-Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size data capacity. However, you should interact in the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 - for storaging information, but DynamoDB - pointer on it.
+Distinctive feature of this database is the principle of payment based on the limit of volume held but not on the storage size data capacity. However, you should interact in the size of objects between 1 byte and 400KB for effective queries (writing, reading). If there are larger objects (for example not structured BLOB-objects) you may work with the following bundle of services: Amazon S3 is made for storing information, but DynamoDB is a pointer on it.
 
 ## DynamoDB Customizable Services
 
 In contrast to many other databases, the addition of any improvements for working there is possible to organize in few clicks. Here are some examples.
 
-### FGAC - Fine-Grained Access Control
+### FGAC — Fine-Grained Access Control
 It's comfortable to implement FGAC in purpose to restrict access to your DB on top-level attributes in your document. It works through the secret access token.
 There's no additional payment.
 
@@ -43,7 +43,7 @@ If you want to work with replicas (exact copies) of master table, it will be a g
 
 ### DynamoDB Streams
 
-Data in the table is changeable and you don't want to throttle table with requests? You may appreciate the following possibility - DynamoDB Streams, which saves data in chronological sequence format (in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
+Data in the table is changeable and you don't want to throttle table with requests? You may appreciate the following possibility — DynamoDB Streams, which saves data in chronological sequence format (in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
 
 Don't forget to activate this feature separately for each table.
 
@@ -53,8 +53,8 @@ Changes made to any individual item will appear in the correct order.
 
 You have the following order of updating:
 1. First player has 100 points
-2. Second player - 50 points
-3. First player - 70 points
+2. Second player — 50 points
+3. First player — 70 points
 The third updating must be after the first, but there are no guarantees that the second will be between the 1st and 3rd.
 
 Reading updates from the stream occurs with the speed twice as fast as the speed of the contributed write space within your table.
@@ -70,7 +70,7 @@ DynamoDB Triggers is a mechanism that admits to execute custom actions if there 
 > Payment is made only for execution time
 
 ### Time-to-Live (TTL)
-Time-to-Live is a mechanism which lets you define a specific timestamp to delete expired items from your tables, when timestamp is reached. This attribute is in POSIX format - storage time in seconds from January 1, 1970.
+Time-to-Live is a mechanism which lets you define a specific timestamp to delete expired items from your tables, when timestamp is reached. This attribute is in POSIX format — storage time in seconds from January 1, 1970.
 
 For example, it is used for deleting event logs, usage history, session data, etc.
 
@@ -101,20 +101,20 @@ So, if we write blocks with the size less than 1KB and need to execute 100 opera
 In case if we read 1.5Kb - we need 200 units of resources for provision of 100 operations per second. 200 = 100 * Math.ceil(1.5 / 1) = 100 * 2.
 
 
-The least throughput capacity - 1 write unit and 1 read unit. Amazon provides possibility of increasing contributed output as often as you want, as for decreasing it's only 4 times.
+The least throughput capacity includes 1 write unit and 1 read unit. Amazon provides possibility of increasing contributed output as often as you want, as for decreasing it's only 4 times.
 
 > Note that if you are willing to determine units of any capacity you should pay your attention not to the quantity of items have been read per second, but the quantity of API calls. For instance, your application should read from table 300 items per second, and if each item is 4KB or less, then you need 300 units of read capacity. It makes no difference to do 300 separate GetItem calls or 30 BatchGetItem ones each returning 10 items.
 
 ### Global and Local Indexes
 
-Since the requests are made only with primary key (except of 'scan' query), for effective tables' management you should
+Since the requests are made only with primary key (except of 'scan' query), for effective management of the tables you should
 pay attention to such flexible mechanism as indexes. It allows queries based on not-primary attributes.
 
 Primary key can be:
 - partition key
 - partition and sort key.
 
-Also there are 2 indexes' types in DynamoDB.
+Also there are 2 types of indexes in DynamoDB.
 
 | Type of indexes| Partition key | Sort key | Amount| Supported  queries|
 | :---        |    :---      |        :--- |:---:|:---: |
@@ -127,7 +127,7 @@ Local index consumes allotted resources as a part of connected table. It allows 
 
 It is a good possibility to tune throughput capacity of global indexes independently between tables. And you should take into consideration this idea, cause it helps to reallocate the load of table.
 
-Closely to ways of keeping data, there can be found following types: number, string, binary, and boolean. But set, list, and map - cannot be indexed.
+Closely to ways of keeping data, there can be found following types: number, string, binary, and boolean. But set, list, and map cannot be indexed.
 
 ## Getting Started With DynamoDb
 
