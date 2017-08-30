@@ -121,9 +121,9 @@ Also there are two types of indexes in DynamoDB.
 | Local  | Coincide with partition key of table  | Has various sort key of table  |Until 5 indexes|Scan|
 | Global    |Can differ from partition key of table  | Can differ from sort key of table  |Until 5 indexes|Query and Scan|
 
-Attributes will appear in indexes only if they are in the table (so, their amount is less in comparison with other attributes). Thanks to this fact queries facing the index have a very high ** efficiency **.
+Attributes will appear in indexes only if they are in the table (so, their amount is less in comparison with other attributes). Thanks to this fact queries facing the index have a very high **efficiency**.
 
-Local index consumes allotted resources as the part of connected table. It allows execute elements by elements, that have equal partition key value, but different sort key.
+Local index consumes allotted resources as a part of connected table. It allows to execute element that have equal partition key value, but different sort key one by one.
 
 It is a good possibility to tune throughput capacity of global indexes independently between tables. And you should take into consideration this idea, cause it helps to reallocate the load of table.
 
@@ -133,7 +133,7 @@ Closely to ways of keeping data, there can be found following types: number, str
 
 ### Data Types DynamoDb
 
-|Tittle| Types| Additional description|
+|Title| Types| Additional description|
 |--|--|--|
 |Scalar Types |String, Number, Binary, Boolean, Null |  |
 |Document Types |List [ ... ], Map { ... } - until 32 nesting level |At the same time, it can contain different types|
@@ -141,10 +141,10 @@ Closely to ways of keeping data, there can be found following types: number, str
 
 ### The Beginning of Work for Node js
 
-Examples can be taken from the site [Amazone](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
+Examples can be taken from the site [Amazon](http://docs.aws.amazon.com/amazondynamodb/latest/gettingstartedguide/GettingStarted.NodeJs.html).
 
->It should be noted that great importance is attached to keys in working with this database. Almost all requests must contain explicitly specified keys for performing operations. Otherwise, you must use Scan.
->>When formulating queries of various kinds, the conditions for key and non-key terms are set separately.
+> It should be noted that great importance is attached to keys in working with this database. Almost all requests must contain explicitly specified keys for performing operations. Otherwise, you must use Scan.
+>> When formulating queries of various kinds, the conditions for key and non-key terms are set separately.
 
 ### SDK
-For convenient work with DynamoDB, you should pay attention not to sdk [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), but on [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). That allows not to use the cumbersome structure of the description of data types in the code. JavaScript objects are automatically converted to Amazon DynamoDB objects and back.
+For convenient work with DynamoDB, you should pay attention not to SDK [AWS.DynamoDB](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB.html), but on [AWS.DynamoDB.DocumentClient](http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html). That allows not to use the cumbersome structure of the description of data types in the code. JavaScript objects are automatically converted to Amazon DynamoDB objects and back.
