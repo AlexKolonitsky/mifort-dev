@@ -43,7 +43,7 @@ If you want to work with replicas (exact copies) of master table, it will be a g
 
 ### DynamoDB Streams
 
-Items in your table are changeable and you don't want to throttle table with requests? You may appreciate one more good possibility - DynamoDB Streams, which saves data in chronological sequence format (in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
+Data in the table is changeable and you don't want to throttle table with requests? You may appreciate the following possibility - DynamoDB Streams, which saves data in chronological sequence format (in the last 24 hours). So you can have access to it. At the end of this time data is deleted.
 
 Don't forget to activate this feature separately for each table.
 
@@ -57,13 +57,13 @@ You have the following order of updating:
 3. First player - 70 points
 The third updating must be after the first, but there are no guarantees that the second will be between the 1st and 3rd.
 
-Reading updates from the stream occurs with the speed twice as fast as the speed of the provisioned write capacity within your table.
+Reading updates from the stream occurs with the speed twice as fast as the speed of the contributed write space within your table.
 
-Also there is good opportunity to manage data in console in such a way: the name of the key, the item before (old one) and after (new one) and the type of updating (INSERT, REMOVE or MODIFY).
+Also there is a good opportunity to manage data in console in such a way: key name, previous item (old one) and after (new one) and the type of updating (INSERT, REMOVE or MODIFY).
 
 ### Triggers
-DynamoDB Triggers is a mechanism that admits to execute custom actions if there were any updates on item level in the table. So, you can specify it with the help of this algorithm:
-* The custom logic (code of trigger) is stored in AWS function as a code
+DynamoDB Triggers is a mechanism that admits to execute custom actions if there were any modifications on item stage in the table. So, you can specify it with the help of this algorithm:
+* The custom logic (code of trigger) is kept in AWS function as a code
 * Associate an AWS Lambda function to the stream (via DynamoDB Streams) on a table
 * AWS Lambda reads the updates from the associated stream and executes the code in the function.
 
