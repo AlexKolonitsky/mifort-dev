@@ -61,16 +61,22 @@ grid-template-rows: [row-start] 100px [header-end content-start] auto [second-ro
 </body>
 ```
 А на странице получаю:
-![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_Layout_Ira/table.png)
+
+![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_layout_Ira/table.png)
+
 Можно сразу добавить отступы между блоками в .grid-container используя:
 ```css
  grid-column-gap: 15px;
  grid-row-gap: 15px;
 ```
 Отступы добавляются только между блоками, а внешние границы остаются на месте.
-![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_Layout_Ira/table-border.png)
+
+![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_layout_Ira/table-border.png)
+
 Теперь у меня есть пустой шаблон с нужными областями, относительно независимыми друг от друга, которые можно наполнить соответствующей информацией.
-![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_Layout_Ira/page-full.png)
+
+![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_layout_Ira/page-full.png)
+
 Причем не важно, где в HTML-коде находится каждый блок, отображаться он будет обласи заданной классами, а значит есть возможность легко изменять конфигурацию страницы. Например, чтобы поменять местами верхний левый и центральный левый блок при ширине экрана меньше 900px, достаточно медиазапроса:
 ```css
 @media (max-width: 900px) {
@@ -82,6 +88,8 @@ grid-template-rows: [row-start] 100px [header-end content-start] auto [second-ro
   }
 }
 ```
-![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_Layout_Ira/page-small.png)
+
+![](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Articles/Frontend/CSS3_Grid_layout_Ira/page-small.png)
+
 Конечно, это очень упрощенный шаблон, и в реальном проекте гораздо больше нюансов, но так достаточно, чтобы получить первые впечатления: поначалу способ записи новых свойств может показаться громоздким, однако я уверена, что эта сложность на старте позволит гораздо проще работать со страницей в дальнейшем. Grid layout обладает не таким уж большим количеством свойств, часть из которых пришли сюда непосредственно из флекса, тем не менее имеет существенное концептуальное отличие, которое, вполне возможно, позволит CSS3 поспорить с некоторыми фреймворками в удобстве и гибкости верстки. И хотя я уверена, что при практическом использовании в Grid layout найдутся свои недостатки, мне безусловно хотелось бы испробовать ее на своих будущих проектах.
 
