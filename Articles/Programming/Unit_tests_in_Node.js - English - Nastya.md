@@ -1,19 +1,19 @@
 # Unit Tests in Node.js
 
-How long are developers going to bear the injustice in the existing application development cycle? Think about, how often you were distracted by the testing department with a jubilant exclamation: "Found!", "Your code doesn't work right again!". 
-And how often it turned out, that it is not a conceptual pitfall, but some defect, that was occurred when new functionality was added?
-But now, we as developments have the opportunity to rectify the situation: to provide several layers of testing ourselves.
+How long will  developers bear the injustice of the existing application development cycle? Just think, how often you were distracted by the Qality Assurance department with a jubilant exclamation: "Found!", "Your code is not working right again!"
+And how often it turned out, there is not a conceptual pitfall, but a defect that occurred when new functionality was added?
+But now as developmers have the opportunity to rectify the situation by providing several layers of testing ourselves.
 
-Haven't you any desire to write tests yet?
+Haven't you had any desire to write tests yet?
 
 Do you have any gift of prophecy by accident?
 Does your code know itself, when it will change if new functionality appears?
-Or, maybe you are the only, who develops the project? Honestly speaking in this case too, after a couple of months you will not recognize why there are some actions happened in your code.
-And if is it necessary to make changes quickly? What is the probability, that they don't break anything in the code?
+Or, maybe you are the only, who develops the project? Honestly speaking, in this case after a couple of months you will not recognize the reasons why there are some actions happened in your code.
+Is it necessary to make changes quickly? What is the probability, that they don't break anything in the code?
 
 
 ### What are tests like?
-In various resources you can find differenet classification of tests and approaches to their writing.
+In various resources you can find different classification of tests and approaches to their writing.
 The following presentation is used in common variant of tests' description:
 the pyramid, the base of which unit tests are, then integration and on the top end-to-end tests.
 
@@ -189,11 +189,9 @@ But you as a developer are responsible for the quality of the code.
 - Your code always changes: a new functionality is added, the existing code is refactored.
 And tests are your guarantees that these changes didn't harm the current state of the application.
 
-- Tests reduce the development cycle time of the program. How many days and how long does it take to check your functionality? A couple of days, a week or weeks?
-But the detected error was related to the fact, that you didn't take into account some simplest cases, made a mistake in working with the object, etc.
-You will correct - and send for review. And again all around.
+- Tests reduce the development cycle time of the program. How many days and how long does it take to check your functionality? A couple of days, a week or weeks? But the detected error was related to the fact, that you hadn’t taken into account some simplest cases, made a mistake in working with the object, etc. You will correct - and send for review. And again all around.
 
 ![](https://github.com/PerminovaAnastasia/Images/blob/master/Diagram.png)
 
-- When you write a test, you look at your from other perspective and notice unnecessary or missing moments - it helps to improve the structure.
-- Sometimes they can help to simplify understanding the logic of a piece of the code that is under test.
+- When you write a test, you look at your code from other perspective and notice unnecessary or missing moments which helps to improve the structure.
+- Sometimes they can help to simplify understanding of the logic of a piece of the code that is under test.
