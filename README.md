@@ -4,9 +4,6 @@
 
 [Books](https://github.com/AlexKolonitsky/mifort-dev/blob/master/Bibliography.md)
 
-## Backend
-[React: The Basics_Nick](./Articles/Backend/React:_TheBasics_Nick.md)
-
 ## Deployment
 [Gulp_Sergey](./Articles/Deployment/Gulp_Sergey.md)
 
@@ -15,6 +12,8 @@
 [Why I hate&love Angular_Alexey](./Articles/Frontend/Why_I_hate&love_Angular-Alexey.md)
 
 [ngModelOptions](./Articles/Frontend/ngModelOptions.md)
+
+[React: The Basics_Nick](./Articles/Backend/React:_TheBasics_Nick.md)
 
 [Vue.js_The_Basics_Nick](./Articles/Frontend/Vue.js_The_Basics_Nick.md)
 
