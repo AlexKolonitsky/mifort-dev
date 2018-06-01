@@ -1,0 +1,44 @@
+Localize attribute [ng-localize] for AngularJS. Manual.
+
+Create new directive: 
+
+app.directive("ngLocalize", function() {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+
+            var language = localStorage.getItem("language") || 'en';
+
+            function resolveObject(path, obj) {
+                return path.split('.').reduce(function(prev, curr) {
+                    return prev ? prev[curr] : undefined
+                }, obj || self);
+            };
+
+            element.html(resolveObject(attrs.ngLocalize, window.translations[language]));
+        }
+    };
+});
+
+For get current language:
+  var language = localStorage.getItem("language") || 'en';
+
+We have variable for each languages with content:
+  window.translations[each language].
+Template:   
+  window.translations.cn = {
+    "eth": {
+          "collected": "筹募的ETH "
+      }
+  };
+  
+Function 'resolveObject(path, obj)' parse your variable [window.translations.cn] and find value of attribute 'ngLocalize' 
+in all in all nestings.
+
+For replase your CONTENT, which has attribute 'ngLocalize' use method .html() :
+  element.html(resolveObject(attrs.ngLocalize, window.translations[language]));
+  
+if you want replace only TEXT, which has attribute 'ngLocalize' use .text() :
+  element.text(resolveObject(attrs.ngLocalize, window.translations[language]));
+  
+GOOD LUCK!
