@@ -1,4 +1,6 @@
 Localize attribute [ng-localize] for AngularJS. Manual.
+NPM:
+npm i baslocalize
 
 Create new directive: 
 
